@@ -23,5 +23,15 @@ func main() {
 
 	action := strings.ToLower(commandArguments[0])
 
-	println(utils.IsStringAllowed([]utils.AllowedString{Start, Stop}, action))
+	if !utils.IsStringAllowed([]utils.AllowedString{Start, Stop}, action) {
+		fmt.Println("Invalid argument")
+		return
+	}
+
+	switch action {
+	case string(Start):
+		StartProg()
+	case string(Stop):
+		fmt.Println("Codetracer stopped")
+	}
 }
