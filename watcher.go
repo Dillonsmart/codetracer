@@ -35,6 +35,9 @@ func (w *Watcher) Stop() *Watcher {
 	w.StopTime = time.Now()
 	w.running = false
 
+	printSpacer(w.FormattedStartTime())
+	fmt.Println("Codetracer stopped")
+
 	return w
 }
 
